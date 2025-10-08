@@ -1,12 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://did4t1vlwtmyy"]
+[gd_scene load_steps=7 format=3 uid="uid://did4t1vlwtmyy"]
 
+[ext_resource type="Script" uid="uid://dtj11op85fqc8" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b78gs51s40g4g" path="res://Scenes/level.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://1s8xgbmul2b6" path="res://Scenes/tree.tscn" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://by00f8w657sk3" path="res://Scenes/obstacle.tscn" id="5_6bp64"]
+[ext_resource type="PackedScene" uid="uid://b0vs62aimvbvk" path="res://Scenes/car.tscn" id="6_344ge"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(1, 4)
+[node name="main" type="Node2D"]
+position = Vector2(3, 10)
+script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
 position = Vector2(158, 151)
 
-[node name="Level" parent="CharacterBody2D" instance=ExtResource("2_bo1nx")]
+[node name="Level" parent="." instance=ExtResource("2_bo1nx")]
+
+[node name="Tree" parent="." instance=ExtResource("4_21xkr")]
+position = Vector2(146, 10)
+
+[node name="Tree3" parent="." instance=ExtResource("4_21xkr")]
+position = Vector2(192, 6)
+
+[node name="Tree2" parent="." instance=ExtResource("4_21xkr")]
+position = Vector2(183, 44)
+
+[node name="Obstacle" parent="." instance=ExtResource("5_6bp64")]
+position = Vector2(153, 74)
+
+[node name="Car" parent="." instance=ExtResource("6_344ge")]
+position = Vector2(110, 30)

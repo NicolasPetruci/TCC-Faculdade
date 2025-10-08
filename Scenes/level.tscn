@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cnm8dm0sqv32d" path="res://Sprites/middleground1.png" id="3_wqkje"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6phgx"]
-a = Vector2(89.5, -10)
-b = Vector2(-90.5, -10)
+a = Vector2(85.5, -10)
+b = Vector2(-94.5, -10)
 
 [node name="Level" type="ParallaxBackground"]
 script = ExtResource("1_81xng")
@@ -17,9 +17,9 @@ motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBg"]
-position = Vector2(249, -5.96046e-08)
+position = Vector2(245, -242)
 rotation = 1.5708
-scale = Vector2(0.99375, 0.994444)
+scale = Vector2(0.772305, 0.994444)
 texture = ExtResource("1_6phgx")
 centered = false
 
@@ -28,7 +28,7 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxMG2"]
-position = Vector2(250, 0)
+position = Vector2(246, -317)
 rotation = 1.5708
 texture = ExtResource("2_81xng")
 centered = false
@@ -38,7 +38,7 @@ motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxMG1"]
-position = Vector2(249, -8.84626e-13)
+position = Vector2(246, -140)
 rotation = 1.5708
 scale = Vector2(0.996875, 1)
 texture = ExtResource("3_wqkje")
