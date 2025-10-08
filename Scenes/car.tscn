@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0vs62aimvbvk"]
+
+[ext_resource type="Script" uid="uid://mgait3ywnf7m" path="res://Scripts/car.gd" id="1_go66d"]
+[ext_resource type="Texture2D" uid="uid://d4eeb832nua3u" path="res://Sprites/inimigos.png" id="1_wqo35"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go66d"]
+atlas = ExtResource("1_wqo35")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sfmx"]
+atlas = ExtResource("1_wqo35")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi23e"]
+atlas = ExtResource("1_wqo35")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u41r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go66d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sfmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi23e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aky6y"]
+size = Vector2(26, 17)
+
+[node name="Car" type="Area2D"]
+script = ExtResource("1_go66d")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u41r7")
+animation = &"run"
+autoplay = "run"
+frame = 1
+frame_progress = 0.594697
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_aky6y")
