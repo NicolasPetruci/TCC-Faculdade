@@ -13,38 +13,43 @@ b = Vector2(-94.5, -10)
 script = ExtResource("1_81xng")
 
 [node name="ParallaxBg" type="ParallaxLayer" parent="."]
+position = Vector2(0, 48)
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBg"]
-position = Vector2(245, -242)
+position = Vector2(246, -146.888)
 rotation = 1.5708
-scale = Vector2(0.772305, 0.994444)
+scale = Vector2(1.15839, 0.994444)
 texture = ExtResource("1_6phgx")
 centered = false
 
 [node name="ParallaxMG2" type="ParallaxLayer" parent="."]
+position = Vector2(0, 46)
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxMG2"]
-position = Vector2(246, -317)
+position = Vector2(246, -139.844)
 rotation = 1.5708
+scale = Vector2(1.13074, 1)
 texture = ExtResource("2_81xng")
 centered = false
 
 [node name="ParallaxMG1" type="ParallaxLayer" parent="."]
+position = Vector2(0, 46)
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(0, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxMG1"]
-position = Vector2(246, -140)
+position = Vector2(246, -143.543)
 rotation = 1.5708
-scale = Vector2(0.996875, 1)
+scale = Vector2(1.13653, 1)
 texture = ExtResource("3_wqkje")
 centered = false
 
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(160.5, 190)

@@ -12,7 +12,7 @@ position = Vector2(3, 10)
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(158, 151)
+position = Vector2(156, 141)
 
 [node name="Level" parent="." instance=ExtResource("2_bo1nx")]
 
