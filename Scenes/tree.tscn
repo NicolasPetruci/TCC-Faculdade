@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m36md"]
 size = Vector2(14, 14)
 
-[node name="Tree" type="Area2D"]
+[node name="Tree" type="Area2D" groups=["dangerous"]]
 script = ExtResource("1_rsuno")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,6 +1,6 @@
 extends Area2D
 
-var offScreen_y := -180.0
+var offScreen_y := -300.0
 
 func _physics_process(delta):
 	position.y += GameManeger.obj_speed * delta

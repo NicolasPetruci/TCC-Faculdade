@@ -4,14 +4,19 @@ extends CharacterBody2D
 @export var dash_speed := 600.0
 @export var dash_time := 0.1
 @export var dash_cooldown := 3.0
+@export var max_health := 3
+@export var invincible_time := 1.0  # tempo de invencibilidade após levar dano
 
 @onready var anim = $AnimatedSprite2D
-@onready var dash_timer_node = $DashTimer  # o nó precisa se chamar "DashTimer" no editor
+@onready var dash_timer_node = $DashTimer
+@onready var invincible_timer = $InvincibleTimer  
 
 var is_dashing := false
 var dash_timer := 0.0
 var can_dash := true
 var direction := Vector2.ZERO
+var health := max_health
+var is_invincible := false
 
 
 func _physics_process(delta):
@@ -29,15 +34,12 @@ func _physics_process(delta):
 
 	input_dir = input_dir.normalized()
 
-	# Atualiza direção para dash
 	if input_dir != Vector2.ZERO:
 		direction = input_dir
 
-	# Inicia dash
 	if Input.is_action_just_pressed("Dash") and can_dash and direction != Vector2.ZERO:
 		start_dash()
 
-	# Executa dash
 	if is_dashing:
 		dash_timer -= delta
 		if dash_timer <= 0.0:
@@ -73,3 +75,51 @@ func stop_dash():
 
 func _on_DashTimer_timeout():
 	can_dash = true
+
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("dangerous"):
+		take_damage(1)
+
+
+func take_damage(amount: int):
+	if is_invincible:
+		return
+
+	health -= amount
+	is_invincible = true
+	invincible_timer.start(invincible_time)
+	
+	print("Dano recebido! Vida atual:", health)
+
+	if health <= 0:
+		die()
+	else:
+		# Pisca pra indicar dano
+		blink_effect()
+
+
+func _on_InvincibleTimer_timeout():
+	is_invincible = false
+
+
+func die():
+	print("Personagem morreu!")
+	queue_free()
+	get_tree().reload_current_scene()
+
+
+func blink_effect():
+	var blink_times = 4
+	var blink_delay = invincible_time / (blink_times * 2)
+
+	for i in range(blink_times):
+		anim.visible = false
+		await get_tree().create_timer(blink_delay).timeout
+		anim.visible = true
+		await get_tree().create_timer(blink_delay).timeout
+
+
+func _on_InvencibleTimer_timeout() -> void:
+	is_invincible = false
