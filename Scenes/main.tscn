@@ -1,23 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://did4t1vlwtmyy"]
+[gd_scene load_steps=6 format=3 uid="uid://did4t1vlwtmyy"]
 
 [ext_resource type="Script" uid="uid://dtj11op85fqc8" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b78gs51s40g4g" path="res://Scenes/level.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ci7vyqu2suon" path="res://Scripts/spawner_manager.gd" id="4_jjvhh"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
+font_size = 10
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(156, 141)
-
-[node name="Level" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(235, 143)
 
 [node name="SpawnerManager" type="Node2D" parent="."]
+position = Vector2(0, 1)
 script = ExtResource("4_jjvhh")
 
 [node name="SpawnTime" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Level" parent="." instance=ExtResource("2_bo1nx")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 88.0
+offset_bottom = 28.0
+text = "Temporizador: 30"
+label_settings = SubResource("LabelSettings_jjvhh")
 
 [connection signal="timeout" from="SpawnTime" to="SpawnerManager" method="_on_spawn_time_timeout"]

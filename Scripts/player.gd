@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var dash_time := 0.1
 @export var dash_cooldown := 3.0
 @export var max_health := 3
-@export var invincible_time := 1.0  # tempo de invencibilidade após levar dano
+@export var invincible_time := 1.0
 
 @onready var anim = $AnimatedSprite2D
 @onready var dash_timer_node = $DashTimer

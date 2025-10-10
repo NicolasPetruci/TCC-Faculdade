@@ -81,7 +81,7 @@ animations = [{
 size = Vector2(16, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(8, 8)
+size = Vector2(14, 21)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_cvnsp")
@@ -98,7 +98,7 @@ shape = SubResource("RectangleShape2D_gymyn")
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="Collision_Objects" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(16, -4)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="InvincibleTimer" type="Timer" parent="."]

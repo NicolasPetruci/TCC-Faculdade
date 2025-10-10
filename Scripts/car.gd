@@ -8,7 +8,7 @@ func _physics_process(delta):
 	if position.y < offScreen_y:
 		queue_free()
 
-var life := 100
+var life := 1
 
 func take_damage(amount):
 	life -= amount
