@@ -3,7 +3,7 @@ extends Node2D
 var count := 1.0
 @onready var label_count = $CanvasLayer/LabelTimer
 
-@export var main2 := "res://Scenes/main2.tscn"
+@export var main2 := "res://Scenes/bus_level.tscn"
 
 func _process(delta):
 	count -= delta * 1

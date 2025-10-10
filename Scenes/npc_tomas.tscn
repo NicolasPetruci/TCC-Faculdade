@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://p2yvfj534kyb"]
+
+[ext_resource type="Script" uid="uid://dwkema7nv00ng" path="res://Scripts/npc_tomas.gd" id="1_uupij"]
+[ext_resource type="Texture2D" uid="uid://becg4ay5o6y2d" path="res://Sprites/green_note.png" id="2_n1msq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cdyd"]
+size = Vector2(40, 40)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8dtf"]
+bg_color = Color(0.0923971, 0.0923971, 0.0923971, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2d4rk"]
+font_size = 10
+shadow_color = Color(0.137255, 0.137255, 0.137255, 0.470588)
+
+[node name="NPC_Tomas" type="Area2D"]
+script = ExtResource("1_uupij")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n1msq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4cdyd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CaixaDeDialogo" type="Label" parent="CanvasLayer"]
+offset_left = 75.0
+offset_top = 141.0
+offset_right = 255.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_l8dtf")
+autowrap_mode = 2
+
+[node name="TextoDialogo" type="Label" parent="CanvasLayer"]
+offset_left = 80.0
+offset_top = 145.0
+offset_right = 250.0
+offset_bottom = 168.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="TextoInteracao" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -43.0
+offset_right = 20.0
+offset_bottom = -20.0
+theme_override_font_sizes/font_size = 10
+text = "teste"
+label_settings = SubResource("LabelSettings_2d4rk")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
