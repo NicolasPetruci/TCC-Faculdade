@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bubvyu5dabmuw"]
+[gd_scene load_steps=7 format=3 uid="uid://bubvyu5dabmuw"]
 
+[ext_resource type="Script" uid="uid://6wq7pp7x0epa" path="res://Scripts/bus_level.gd" id="1_5qi0g"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_yomgn"]
 [ext_resource type="Script" uid="uid://dupm4uy8q442a" path="res://Scripts/camera_2d.gd" id="6_mt2uc"]
 
@@ -14,6 +15,7 @@ a = Vector2(-1, -22)
 b = Vector2(-3, 476)
 
 [node name="busScene" type="Node2D"]
+script = ExtResource("1_5qi0g")
 
 [node name="Player" parent="." instance=ExtResource("1_yomgn")]
 position = Vector2(123, 117)

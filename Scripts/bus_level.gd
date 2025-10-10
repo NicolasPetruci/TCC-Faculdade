@@ -3,11 +3,11 @@ extends Node2D
 var count := 30.0
 @onready var label_count = $CanvasLayer/LabelTimer
 
-@export var main2 := "res://Scenes/bus_level.tscn"
+@export var main2 = "res://Scenes/boss_fight.tscn"
 
 func _process(delta):
 	count -= delta * 1
-	label_count.text = "Temporizador: " + str(int(count))
+	
 	if count <= 0:
 		get_tree().change_scene_to_file(main2)
 
