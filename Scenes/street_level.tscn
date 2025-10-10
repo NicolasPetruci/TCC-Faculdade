@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gjlqrgwpsmk5"]
+
+[ext_resource type="Script" uid="uid://cjtrr16jxx03j" path="res://Scripts/level.gd" id="1_svf3f"]
+[ext_resource type="Texture2D" uid="uid://cnbrn2p5rsawn" path="res://Sprites/Rua.png" id="2_svf3f"]
+
+[node name="StreetLevel" type="ParallaxBackground"]
+script = ExtResource("1_svf3f")
+
+[node name="ParallaxBg" type="ParallaxLayer" parent="."]
+position = Vector2(0, 48)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(0, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBg"]
+position = Vector2(-16, -70)
+scale = Vector2(1.13125, 1)
+texture = ExtResource("2_svf3f")
+centered = false

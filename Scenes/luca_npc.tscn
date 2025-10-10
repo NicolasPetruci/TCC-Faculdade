@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7j8mvbxes2yq"]
+
+[ext_resource type="PackedScene" uid="uid://k5ehbe63p7k4" path="res://Scenes/npc_template.tscn" id="1_lj8yu"]
+[ext_resource type="Texture2D" uid="uid://b7ypt6ada11wf" path="res://Sprites/yellow_note.png" id="2_lj8yu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4060c"]
+size = Vector2(13, 20.625)
+
+[node name="LucaNpc" instance=ExtResource("1_lj8yu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lj8yu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 1.6875)
+shape = SubResource("RectangleShape2D_4060c")
+
+[node name="DialogueChatBox" parent="." index="3"]
+dialogue_file_path = "res://dialogue/luca_dialogue.json"

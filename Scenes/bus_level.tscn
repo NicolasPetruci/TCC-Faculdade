@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://jhpxh0mkm801"]
+
+[ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_yomgn"]
+[ext_resource type="PackedScene" uid="uid://c7j8mvbxes2yq" path="res://Scenes/luca_npc.tscn" id="3_mt2uc"]
+[ext_resource type="PackedScene" uid="uid://dabkpta4pfkl3" path="res://Scenes/joao_npc.tscn" id="4_lu7x5"]
+[ext_resource type="PackedScene" uid="uid://gjlqrgwpsmk5" path="res://Scenes/street_level.tscn" id="4_mkfkd"]
+[ext_resource type="PackedScene" uid="uid://dtwprkrav006r" path="res://Scenes/betina_npc.tscn" id="5_1evo8"]
+[ext_resource type="PackedScene" uid="uid://dqpbiixbdnpmq" path="res://Scenes/tomas_npc.tscn" id="6_0ejl3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yomgn"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6uck0"]
+a = Vector2(319, 142)
+b = Vector2(0, 142)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5qi0g"]
+a = Vector2(-1, -22)
+b = Vector2(-3, 476)
+
+[node name="busScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_yomgn")]
+position = Vector2(123, 117)
+
+[node name="BusBack" type="StaticBody2D" parent="."]
+position = Vector2(1, 38)
+physics_material_override = SubResource("PhysicsMaterial_yomgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
+shape = SubResource("SegmentShape2D_6uck0")
+
+[node name="BusBack2" type="StaticBody2D" parent="."]
+position = Vector2(1, 38)
+physics_material_override = SubResource("PhysicsMaterial_yomgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
+position = Vector2(1, -494)
+shape = SubResource("SegmentShape2D_6uck0")
+
+[node name="BusWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
+position = Vector2(2, -295)
+shape = SubResource("SegmentShape2D_5qi0g")
+
+[node name="BusWall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
+position = Vector2(322, -294)
+shape = SubResource("SegmentShape2D_5qi0g")
+
+[node name="StreetLevel" parent="." instance=ExtResource("4_mkfkd")]
+
+[node name="LucaNpc" parent="." instance=ExtResource("3_mt2uc")]
+position = Vector2(36, -275)
+
+[node name="JoaoNpc" parent="." instance=ExtResource("4_lu7x5")]
+position = Vector2(162, 156)
+
+[node name="BetinaNpc" parent="." instance=ExtResource("5_1evo8")]
+position = Vector2(106, -150)
+
+[node name="TomasNpc" parent="." instance=ExtResource("6_0ejl3")]
+position = Vector2(228, -31)
