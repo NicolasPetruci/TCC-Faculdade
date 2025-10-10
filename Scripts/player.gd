@@ -11,12 +11,13 @@ extends CharacterBody2D
 @onready var dash_timer_node = $DashTimer
 @onready var invincible_timer = $InvincibleTimer  
 
+var attackScn: PackedScene = preload("uid://cyex75crscpbl")
 
-@export var player_in_area := false
 var is_dashing := false
 var dash_timer := 0.0
 var can_dash := true
 var direction := Vector2.ZERO
+var non_normal_dir := Vector2.ZERO
 var health := max_health
 var is_invincible := false
 
@@ -33,7 +34,7 @@ func _physics_process(delta):
 		input_dir.y += 1
 	if Input.is_action_pressed("Cima"):
 		input_dir.y -= 1
-
+	non_normal_dir = input_dir
 	input_dir = input_dir.normalized()
 
 	if input_dir != Vector2.ZERO:
@@ -62,6 +63,9 @@ func _physics_process(delta):
 	else:
 		anim.play("Idle")
 
+func _input(event):
+	if event.is_action_released("Atacar"):
+		attack()
 
 func start_dash():
 	is_dashing = true
@@ -122,6 +126,10 @@ func blink_effect():
 		anim.visible = true
 		await get_tree().create_timer(blink_delay).timeout
 
+func attack():
+	var atk: Node2D = attackScn.instantiate()
+	add_child(atk)
+	atk.attack(non_normal_dir)
 
 func _on_InvencibleTimer_timeout() -> void:
 	is_invincible = false
