@@ -24,52 +24,6 @@ b = Vector2(-3, 476)
 position = Vector2(161, 22)
 texture = ExtResource("5_umu4d")
 
-[node name="Player" parent="." instance=ExtResource("1_yomgn")]
-position = Vector2(123, 117)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-limit_smoothed = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_screen = false
-script = ExtResource("6_mt2uc")
-
-[node name="BusBack" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
-physics_material_override = SubResource("PhysicsMaterial_yomgn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
-shape = SubResource("SegmentShape2D_6uck0")
-
-[node name="BusBack2" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
-physics_material_override = SubResource("PhysicsMaterial_yomgn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
-position = Vector2(1, -494)
-shape = SubResource("SegmentShape2D_6uck0")
-
-[node name="BusWall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
-position = Vector2(2, -295)
-shape = SubResource("SegmentShape2D_5qi0g")
-
-[node name="BusWall2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
-position = Vector2(322, -294)
-shape = SubResource("SegmentShape2D_5qi0g")
-
-[node name="NpcJoao" parent="." instance=ExtResource("4_mt2uc")]
-position = Vector2(123, 38)
-
-[node name="NPC_Tomas" parent="." instance=ExtResource("3_5qi0g")]
-position = Vector2(207, -65)
-
-[node name="NpcLuca" parent="." instance=ExtResource("4_mkfkd")]
-position = Vector2(36, -282)
-
 [node name="Chairs" type="Node2D" parent="."]
 
 [node name="Chair" parent="Chairs" instance=ExtResource("7_lu7x5")]
@@ -110,3 +64,176 @@ position = Vector2(75, -109)
 
 [node name="Chair13" parent="Chairs" instance=ExtResource("7_lu7x5")]
 position = Vector2(75, -131)
+
+[node name="Chairs2" type="Node2D" parent="."]
+position = Vector2(20, 0)
+
+[node name="Chair" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(74, 157)
+
+[node name="Chair2" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 133)
+
+[node name="Chair3" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 110)
+
+[node name="Chair4" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 87)
+
+[node name="Chair5" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 63)
+
+[node name="Chair6" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 39)
+
+[node name="Chair7" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 16)
+
+[node name="Chair8" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -9)
+
+[node name="Chair9" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -34)
+
+[node name="Chair10" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -60)
+
+[node name="Chair11" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -86)
+
+[node name="Chair12" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -109)
+
+[node name="Chair13" parent="Chairs2" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -131)
+
+[node name="Chairs3" type="Node2D" parent="."]
+position = Vector2(170, 0)
+
+[node name="Chair" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(74, 157)
+
+[node name="Chair2" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 133)
+
+[node name="Chair3" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 110)
+
+[node name="Chair4" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 87)
+
+[node name="Chair5" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 63)
+
+[node name="Chair6" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 39)
+
+[node name="Chair7" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 16)
+
+[node name="Chair8" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -9)
+
+[node name="Chair9" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -34)
+
+[node name="Chair10" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -60)
+
+[node name="Chair11" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -86)
+
+[node name="Chair12" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -109)
+
+[node name="Chair13" parent="Chairs3" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -131)
+
+[node name="Chairs4" type="Node2D" parent="."]
+position = Vector2(150, 0)
+
+[node name="Chair" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(74, 157)
+
+[node name="Chair2" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 133)
+
+[node name="Chair3" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 110)
+
+[node name="Chair4" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 87)
+
+[node name="Chair5" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 63)
+
+[node name="Chair6" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 39)
+
+[node name="Chair7" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 16)
+
+[node name="Chair8" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -9)
+
+[node name="Chair9" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -34)
+
+[node name="Chair10" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -60)
+
+[node name="Chair11" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -86)
+
+[node name="Chair12" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -109)
+
+[node name="Chair13" parent="Chairs4" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -131)
+
+[node name="Player" parent="." instance=ExtResource("1_yomgn")]
+position = Vector2(123, 117)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_screen = false
+script = ExtResource("6_mt2uc")
+
+[node name="BusBack" type="StaticBody2D" parent="."]
+position = Vector2(1, 38)
+physics_material_override = SubResource("PhysicsMaterial_yomgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
+shape = SubResource("SegmentShape2D_6uck0")
+
+[node name="BusBack2" type="StaticBody2D" parent="."]
+position = Vector2(1, 38)
+physics_material_override = SubResource("PhysicsMaterial_yomgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
+position = Vector2(1, -494)
+shape = SubResource("SegmentShape2D_6uck0")
+
+[node name="BusWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
+position = Vector2(65, -293)
+shape = SubResource("SegmentShape2D_5qi0g")
+
+[node name="BusWall2" type="StaticBody2D" parent="."]
+position = Vector2(-62, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
+position = Vector2(322, -294)
+shape = SubResource("SegmentShape2D_5qi0g")
+
+[node name="NpcJoao" parent="." instance=ExtResource("4_mt2uc")]
+position = Vector2(123, 38)
+
+[node name="NPC_Tomas" parent="." instance=ExtResource("3_5qi0g")]
+position = Vector2(207, -65)
+
+[node name="NpcLuca" parent="." instance=ExtResource("4_mkfkd")]
+position = Vector2(95, -284)
