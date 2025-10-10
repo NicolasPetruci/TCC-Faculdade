@@ -1,6 +1,6 @@
 extends Node2D
 
-var count := 1.0
+var count := 30.0
 @onready var label_count = $CanvasLayer/LabelTimer
 
 @export var main2 := "res://Scenes/bus_level.tscn"
