@@ -11,8 +11,8 @@ extends CharacterBody2D
 @onready var dash_timer_node = $DashTimer
 @onready var invincible_timer = $InvincibleTimer  
 
-var attackScn: PackedScene = preload("uid://cyex75crscpbl")
-
+var attackScn: PackedScene = preload("res://Scenes/player_attack.tscn")
+@export var player_in_area := false
 var is_dashing := false
 var dash_timer := 0.0
 var can_dash := true

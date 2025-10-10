@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_yomgn"]
 [ext_resource type="PackedScene" uid="uid://p2yvfj534kyb" path="res://Scenes/npc_tomas.tscn" id="3_5qi0g"]
-[ext_resource type="PackedScene" path="res://Scenes/npc_luca.tscn" id="4_mkfkd"]
-[ext_resource type="PackedScene" path="res://Scenes/npc_joao.tscn" id="4_mt2uc"]
+[ext_resource type="PackedScene" uid="uid://dr4uhylk17ipg" path="res://Scenes/npc_luca.tscn" id="4_mkfkd"]
+[ext_resource type="PackedScene" uid="uid://w1x60nd1a2uu" path="res://Scenes/npc_joao.tscn" id="4_mt2uc"]
 [ext_resource type="Texture2D" uid="uid://cgsispahk5vr0" path="res://Sprites/Onibus_Teste.png" id="5_umu4d"]
 [ext_resource type="Script" uid="uid://dupm4uy8q442a" path="res://Scripts/camera_2d.gd" id="6_mt2uc"]
-[ext_resource type="PackedScene" path="res://Scenes/chair.tscn" id="7_lu7x5"]
+[ext_resource type="PackedScene" uid="uid://dgqabwwfs5l0g" path="res://Scenes/chair.tscn" id="7_lu7x5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yomgn"]
 
