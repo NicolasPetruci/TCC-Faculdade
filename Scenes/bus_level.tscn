@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bubvyu5dabmuw"]
+[gd_scene load_steps=11 format=3 uid="uid://bubvyu5dabmuw"]
 
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_yomgn"]
 [ext_resource type="PackedScene" uid="uid://p2yvfj534kyb" path="res://Scenes/npc_tomas.tscn" id="3_5qi0g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://w1x60nd1a2uu" path="res://Scenes/npc_joao.tscn" id="4_mt2uc"]
 [ext_resource type="Texture2D" uid="uid://cgsispahk5vr0" path="res://Sprites/Onibus_Teste.png" id="5_umu4d"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="6_mt2uc"]
+[ext_resource type="PackedScene" uid="uid://dgqabwwfs5l0g" path="res://Scenes/chair.tscn" id="7_lu7x5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yomgn"]
 
@@ -61,10 +62,51 @@ position = Vector2(322, -294)
 shape = SubResource("SegmentShape2D_5qi0g")
 
 [node name="NpcJoao" parent="." instance=ExtResource("4_mt2uc")]
-position = Vector2(100, 40)
+position = Vector2(123, 38)
 
 [node name="NPC_Tomas" parent="." instance=ExtResource("3_5qi0g")]
 position = Vector2(207, -65)
 
 [node name="NpcLuca" parent="." instance=ExtResource("4_mkfkd")]
 position = Vector2(36, -282)
+
+[node name="Chairs" type="Node2D" parent="."]
+
+[node name="Chair" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(74, 157)
+
+[node name="Chair2" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 133)
+
+[node name="Chair3" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 110)
+
+[node name="Chair4" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 87)
+
+[node name="Chair5" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 63)
+
+[node name="Chair6" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 39)
+
+[node name="Chair7" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, 16)
+
+[node name="Chair8" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -9)
+
+[node name="Chair9" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -34)
+
+[node name="Chair10" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -60)
+
+[node name="Chair11" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -86)
+
+[node name="Chair12" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -109)
+
+[node name="Chair13" parent="Chairs" instance=ExtResource("7_lu7x5")]
+position = Vector2(75, -131)
