@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var speed := 75.0
-@export var dash_speed := 750.0
+@export var speed := 50.0
+@export var dash_speed := 1000.0
 @export var dash_time := 0.1
 @export var dash_cooldown := 2.0
 @export var max_health := 50
-@export var invincible_time := 2.0
+@export var invincible_time := 3.0
 
 signal health_change()
 
