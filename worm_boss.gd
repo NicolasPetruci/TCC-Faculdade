@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_health := 200
+var max_health := 500
 var health := max_health
 
 @onready var animation_player = $AnimationPlayer
