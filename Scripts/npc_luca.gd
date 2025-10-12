@@ -9,10 +9,14 @@ var falando := false
 var pode_avancar := false
 var fala_index := 0
 
+var bossFight := "res://Scenes/boss_arena.tscn"
+
 var falas = [
-	"Estão atrasados hein!",
-	"Ah, tanto faz.",
-	"Só arrumem essa bagunça e se acomodem!"
+	"Luca: Estão atrasados hein!",
+	"Gabriel: Pelo menos peguei o ônibus 'no ponto'.",
+	"Luca: Engraçadinho, arruma essa bagunça!",
+	"Gabriel: Espera... Está vendo isso???",
+	"Luca: O ônibus está sendo invadido!!!!"
 ]
 
 func _ready() -> void:
@@ -37,7 +41,9 @@ func _on_body_exited(body: Node2D) -> void:
 		player_in_area = false
 		texto_interacao.visible = false
 		if falando:
+			
 			encerrar_dialogo()
+			
 
 func iniciar_dialogo():
 	falando = true
@@ -69,3 +75,4 @@ func encerrar_dialogo():
 	pode_avancar = false
 	caixa_de_dialogo.visible = false
 	texto_dialogo.visible = false
+	get_tree().change_scene_to_file(bossFight)

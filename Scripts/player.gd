@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-@export var speed := 200.0
-@export var dash_speed := 600.0
+@export var speed := 75.0
+@export var dash_speed := 750.0
 @export var dash_time := 0.1
-@export var dash_cooldown := 3.0
-@export var max_health := 30
-@export var invincible_time := 1.0
+@export var dash_cooldown := 2.0
+@export var max_health := 50
+@export var invincible_time := 2.0
+
+signal health_change()
 
 @onready var anim = $AnimatedSprite2D
 @onready var dash_timer_node = $DashTimer
@@ -19,7 +21,8 @@ var dash_timer := 0.0
 var can_dash := true
 var direction := Vector2.ZERO
 var non_normal_dir := Vector2.ZERO
-var health := max_health
+@export var health := max_health
+@onready var health_bar = $CanvasLayer2/HealthBar
 var is_invincible := false
 
 
@@ -63,6 +66,8 @@ func _physics_process(delta):
 		anim.flip_h = input_dir.x < 0
 	else:
 		anim.play("Idle")
+		
+		
 
 func _input(event):
 	if event.is_action_released("Atacar"):
@@ -83,11 +88,13 @@ func stop_dash():
 func _on_DashTimer_timeout():
 	can_dash = true
 
-
+func update_health_bar():
+	if health_bar:
+		health_bar.value = health
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("dangerous"):
-		take_damage(1)
+		take_damage(15)
 
 
 func take_damage(amount: int):
@@ -99,6 +106,7 @@ func take_damage(amount: int):
 	invincible_timer.start(invincible_time)
 	
 	print("Vida atual do Player:", health)
+	update_health_bar()
 
 	if health <= 0:
 		die()
@@ -133,4 +141,4 @@ func attack():
 	atk.attack(non_normal_dir)
 
 func _on_InvencibleTimer_timeout() -> void:
-	is_invincible = false
+	is_invincible = false 

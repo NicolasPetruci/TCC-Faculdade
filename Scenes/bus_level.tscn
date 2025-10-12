@@ -228,6 +228,29 @@ position = Vector2(75, -174)
 [node name="Chair16" parent="Chairs4" instance=ExtResource("7_lu7x5")]
 position = Vector2(75, -195)
 
+[node name="Chairs5" type="Node2D" parent="."]
+
+[node name="Chair" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(86, -295)
+
+[node name="Chair2" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(206, 157)
+
+[node name="Chair3" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(188, 157)
+
+[node name="Chair4" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(170, 157)
+
+[node name="Chair5" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(152, 157)
+
+[node name="Chair6" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(134, 157)
+
+[node name="Chair7" parent="Chairs5" instance=ExtResource("7_lu7x5")]
+position = Vector2(116, 157)
+
 [node name="Player" parent="." instance=ExtResource("1_yomgn")]
 position = Vector2(123, 117)
 
@@ -267,31 +290,10 @@ position = Vector2(322, -294)
 shape = SubResource("SegmentShape2D_5qi0g")
 
 [node name="NpcJoao" parent="." instance=ExtResource("4_mt2uc")]
-position = Vector2(123, 38)
+position = Vector2(120, 21)
 
 [node name="NPC_Tomas" parent="." instance=ExtResource("3_5qi0g")]
-position = Vector2(207, -65)
+position = Vector2(196, -66)
 
 [node name="NpcLuca" parent="." instance=ExtResource("4_mkfkd")]
-position = Vector2(86, -301)
-
-[node name="Chair" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(86, -295)
-
-[node name="Chair2" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(206, 157)
-
-[node name="Chair3" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(188, 157)
-
-[node name="Chair4" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(170, 157)
-
-[node name="Chair5" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(152, 157)
-
-[node name="Chair6" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(134, 157)
-
-[node name="Chair7" parent="." instance=ExtResource("7_lu7x5")]
-position = Vector2(116, 157)
+position = Vector2(160, -297)

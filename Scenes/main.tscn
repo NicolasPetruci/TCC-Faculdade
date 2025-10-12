@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://did4t1vlwtmyy"]
+[gd_scene load_steps=7 format=3 uid="uid://did4t1vlwtmyy"]
 
 [ext_resource type="Script" uid="uid://dtj11op85fqc8" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b78gs51s40g4g" path="res://Scenes/level.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ci7vyqu2suon" path="res://Scripts/spawner_manager.gd" id="4_jjvhh"]
+[ext_resource type="FontFile" uid="uid://uestdml20eup" path="res://Minecraft.ttf" id="5_kry3j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 10
@@ -12,7 +13,7 @@ font_size = 10
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(151, 163)
+position = Vector2(161, 160)
 
 [node name="SpawnerManager" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -27,10 +28,11 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LabelTimer" type="Label" parent="CanvasLayer"]
-offset_left = 3.0
-offset_top = 5.0
-offset_right = 88.0
-offset_bottom = 28.0
+offset_left = 125.0
+offset_top = 4.0
+offset_right = 211.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("5_kry3j")
 text = "Temporizador: 30"
 label_settings = SubResource("LabelSettings_jjvhh")
 

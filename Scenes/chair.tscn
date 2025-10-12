@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgqabwwfs5l0g"]
+[gd_scene load_steps=3 format=3 uid="uid://dgqabwwfs5l0g"]
 
 [ext_resource type="Texture2D" uid="uid://c141gaa01tis0" path="res://Sprites/Cadeira.png" id="1_nsp1p"]
 
-[node name="Chair" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nsp1p"]
+radius = 7.0
+height = 20.0
+
+[node name="Chair" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nsp1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_nsp1p")

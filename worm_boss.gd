@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 var max_health := 550
-var health := max_health
+@export  var health_boss := max_health
 
 @onready var animation_player = $AnimationPlayer
+@onready var health_bar = $CanvasLayer2/HealthBar
 
 @onready var anim = $AnimatedSprite2D
 
@@ -21,7 +22,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 
 #------------------------------------------------
 
-@export var max_health_boss := 200
+func update_health_bar():
+	if health_bar:
+		health_bar.value = health_boss
 
 func blink_effect():
 	var blink_times = 4
@@ -38,9 +41,10 @@ func die():
 	queue_free()
 
 func take_damage(amount: int):
-			health -= amount
-			print("Vida atual do Boss:", health)
-			if health <= 0:
+			health_boss -= amount
+			print("Vida atual do Boss:", health_boss)
+			update_health_bar()
+			if health_boss <= 0:
 				die()
 			else:
 				blink_effect()
@@ -49,3 +53,4 @@ func take_damage(amount: int):
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Attack"):
 		take_damage(10)
+		

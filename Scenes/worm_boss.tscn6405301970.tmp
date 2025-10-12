@@ -97,7 +97,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HitboxAtk/Sprite2D:visible")
+tracks/2/path = NodePath("Hitbox/Sprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -109,7 +109,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxAtk/CollisionShape2D:disabled")
+tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -161,7 +161,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HitboxAtk/Sprite2D:visible")
+tracks/2/path = NodePath("Hitbox/Sprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -173,7 +173,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxAtk/CollisionShape2D:disabled")
+tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -249,13 +249,13 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_leav5")
 
-[node name="HitboxAtk" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAtk"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_u0ui0")
 
-[node name="Sprite2D" type="Sprite2D" parent="HitboxAtk"]
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
 visible = false
 texture = ExtResource("2_u0ui0")
 
@@ -284,6 +284,7 @@ script = ExtResource("4_q7cgn")
 mini_worm_node = ExtResource("5_j6ae8")
 
 [node name="Timer" type="Timer" parent="WormSpawner"]
+wait_time = 1.5
 autostart = true
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -295,9 +296,6 @@ shape = SubResource("RectangleShape2D_j6ae8")
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer2"]
-anchors_preset = -1
-anchor_top = 0.0777778
-anchor_bottom = 0.0777778
 offset_left = 120.0
 offset_top = 154.0
 offset_right = 220.0
@@ -309,7 +307,7 @@ show_percentage = false
 script = ExtResource("6_foidg")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="HitboxAtk" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="WormSpawner/Timer" to="WormSpawner" method="_on_timer_timeout"]

@@ -10,9 +10,9 @@ var pode_avancar := false
 var fala_index := 0
 
 var falas = [
-	"Você quebrou o vidro de trás mesmo?",
-	"Minha? Ta falando do que?",
-	"*Assovio*"
+	"Tomas: Rapaz, você realmente quebrou o vidro lá de trás.",
+	"Gabriel: A ideia foi sua...",
+	"Tomas: É... quem diria."
 ]
 
 func _ready() -> void:

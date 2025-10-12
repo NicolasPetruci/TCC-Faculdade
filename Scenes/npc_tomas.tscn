@@ -1,20 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://p2yvfj534kyb"]
+[gd_scene load_steps=9 format=3 uid="uid://p2yvfj534kyb"]
 
 [ext_resource type="Script" uid="uid://dwkema7nv00ng" path="res://Scripts/npc_tomas.gd" id="1_uupij"]
 [ext_resource type="Texture2D" uid="uid://becg4ay5o6y2d" path="res://Sprites/green_note.png" id="2_n1msq"]
+[ext_resource type="FontFile" uid="uid://uestdml20eup" path="res://Minecraft.ttf" id="3_n1msq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cdyd"]
 size = Vector2(40, 40)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8dtf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1msq"]
 bg_color = Color(0.0923971, 0.0923971, 0.0923971, 0.6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_uupij"]
+[sub_resource type="LabelSettings" id="LabelSettings_4cdyd"]
 font_size = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_2d4rk"]
+[sub_resource type="LabelSettings" id="LabelSettings_n1msq"]
 font_size = 7
 shadow_color = Color(0.137255, 0.137255, 0.137255, 0.470588)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1msq"]
+radius = 6.0
+height = 26.0
 
 [node name="NPC_Tomas" type="Area2D"]
 script = ExtResource("1_uupij")
@@ -27,34 +32,43 @@ shape = SubResource("RectangleShape2D_4cdyd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
 [node name="CaixaDeDialogo" type="Label" parent="CanvasLayer"]
-offset_left = 75.0
-offset_top = 141.0
-offset_right = 255.0
-offset_bottom = 171.0
+offset_left = 35.0
+offset_top = 142.0
+offset_right = 285.0
+offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("3_n1msq")
 theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_l8dtf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n1msq")
 autowrap_mode = 2
 
 [node name="TextoDialogo" type="Label" parent="CanvasLayer"]
-offset_left = 80.0
-offset_top = 145.0
-offset_right = 250.0
-offset_bottom = 168.0
-label_settings = SubResource("LabelSettings_uupij")
-
-[node name="Timer" type="Timer" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 146.0
+offset_right = 280.0
+offset_bottom = 166.0
+theme_override_fonts/font = ExtResource("3_n1msq")
+label_settings = SubResource("LabelSettings_4cdyd")
 
 [node name="TextoInteracao" type="Label" parent="."]
-offset_left = -44.0
-offset_top = -43.0
-offset_right = 12.0
+offset_left = -21.0
+offset_top = -47.0
+offset_right = 21.0
 offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("3_n1msq")
 theme_override_font_sizes/font_size = 10
 text = "teste"
-label_settings = SubResource("LabelSettings_2d4rk")
+label_settings = SubResource("LabelSettings_n1msq")
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_n1msq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
