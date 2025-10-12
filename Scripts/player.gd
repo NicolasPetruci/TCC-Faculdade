@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var dash_speed := 600.0
 @export var dash_time := 0.1
 @export var dash_cooldown := 3.0
-@export var max_health := 3
+@export var max_health := 30
 @export var invincible_time := 1.0
 
 @onready var anim = $AnimatedSprite2D
@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var invincible_timer = $InvincibleTimer  
 
 var attackScn: PackedScene = preload("res://Scenes/player_attack.tscn")
+
 @export var player_in_area := false
 var is_dashing := false
 var dash_timer := 0.0

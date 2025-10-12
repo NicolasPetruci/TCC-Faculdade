@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dtj11op85fqc8" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b78gs51s40g4g" path="res://Scenes/level.tscn" id="2_bo1nx"]
-[ext_resource type="Script" path="res://Scripts/spawner_manager.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://ci7vyqu2suon" path="res://Scripts/spawner_manager.gd" id="4_jjvhh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 10

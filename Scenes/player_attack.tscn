@@ -58,9 +58,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiotk"]
 radius = 14.0013
-height = 58.0013
+height = 88.0027
 
-[node name="PlayerAttack" type="StaticBody2D"]
+[node name="PlayerAttack" type="Area2D" groups=["Attack"]]
 script = ExtResource("1_cjeny")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -68,5 +68,9 @@ sprite_frames = SubResource("SpriteFrames_n8ajb")
 frame_progress = 0.793886
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.57013
+shape = SubResource("CapsuleShape2D_wiotk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = -1.57013
 shape = SubResource("CapsuleShape2D_wiotk")

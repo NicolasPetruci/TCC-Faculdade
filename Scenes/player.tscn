@@ -93,6 +93,8 @@ animation = &"Dash"
 autoplay = "Idle"
 
 [node name="Collision_Physics" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_gymyn")
 

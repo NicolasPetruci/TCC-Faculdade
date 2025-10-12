@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw3u6rldtwt1y"]
+[gd_scene load_steps=6 format=3 uid="uid://dw3u6rldtwt1y"]
 
 [ext_resource type="Texture2D" uid="uid://fikwmi6g1e6t" path="res://Sprites/cave.png" id="1_5sxfj"]
 [ext_resource type="PackedScene" uid="uid://b4m6cjrwcy3cc" path="res://Scenes/worm_boss.tscn" id="2_ax60m"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="3_ycwjk"]
-[ext_resource type="Script" uid="uid://dupm4uy8q442a" path="res://Scripts/camera_2d.gd" id="4_nisv6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ax60m"]
 texture = ExtResource("1_5sxfj")
@@ -309,10 +308,3 @@ position = Vector2(139, 66)
 
 [node name="Player" parent="." instance=ExtResource("3_ycwjk")]
 position = Vector2(181, 133)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-limit_smoothed = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_screen = false
-script = ExtResource("4_nisv6")
