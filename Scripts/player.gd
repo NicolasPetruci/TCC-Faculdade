@@ -98,7 +98,7 @@ func take_damage(amount: int):
 	is_invincible = true
 	invincible_timer.start(invincible_time)
 	
-	print("Dano recebido! Vida atual:", health)
+	print("Vida atual do Player:", health)
 
 	if health <= 0:
 		die()

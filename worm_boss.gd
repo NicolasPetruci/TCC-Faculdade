@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_health := 500
+var max_health := 550
 var health := max_health
 
 @onready var animation_player = $AnimationPlayer
@@ -39,7 +39,7 @@ func die():
 
 func take_damage(amount: int):
 			health -= amount
-			print("Dano recebido! Vida atual:", health)
+			print("Vida atual do Boss:", health)
 			if health <= 0:
 				die()
 			else:

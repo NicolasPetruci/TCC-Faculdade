@@ -277,7 +277,7 @@ script = ExtResource("4_q7cgn")
 mini_worm_node = ExtResource("5_j6ae8")
 
 [node name="Timer" type="Timer" parent="WormSpawner"]
-wait_time = 0.75
+wait_time = 1.5
 autostart = true
 
 [node name="HitBox" type="Area2D" parent="."]
