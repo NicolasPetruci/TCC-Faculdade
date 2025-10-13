@@ -18,7 +18,7 @@ func _on_player_body_entered(body: Node2D) -> void:
 
 func _on_hitbox_body_entered(body) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(5)
+		body.take_damage(25)
 
 #------------------------------------------------
 
@@ -26,15 +26,6 @@ func update_health_bar():
 	if health_bar:
 		health_bar.value = health_boss
 
-func blink_effect():
-	var blink_times = 4
-	var blink_delay = 4 / (blink_times * 2)
-
-	for i in range(blink_times):
-		anim.visible = false
-		await get_tree().create_timer(blink_delay).timeout
-		anim.visible = true
-		await get_tree().create_timer(blink_delay).timeout
 
 func die():
 	print("Boss morreu!")
@@ -46,8 +37,6 @@ func take_damage(amount: int):
 			update_health_bar()
 			if health_boss <= 0:
 				die()
-			else:
-				blink_effect()
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:

@@ -1,11 +1,11 @@
 [gd_scene load_steps=24 format=3 uid="uid://b4m6cjrwcy3cc"]
 
-[ext_resource type="Texture2D" uid="uid://bt3yfi1fjvogx" path="res://Sprites/big_worm.png" id="1_efwh1"]
-[ext_resource type="Script" uid="uid://bhb4srej6qrjr" path="res://worm_boss.gd" id="1_leav5"]
-[ext_resource type="Texture2D" uid="uid://eijm0pegypf1" path="res://Sprites/hitbox_circle.png" id="2_u0ui0"]
-[ext_resource type="Script" uid="uid://dwycky2678vac" path="res://worm_spawner.gd" id="4_q7cgn"]
-[ext_resource type="PackedScene" uid="uid://2uye6bilwkwl" path="res://Scenes/minion_worm.tscn" id="5_j6ae8"]
-[ext_resource type="Script" uid="uid://d2ubobj8ibu2g" path="res://Scripts/progress_bar.gd" id="6_foidg"]
+[ext_resource type="Script" uid="uid://bhb4srej6qrjr" path="res://worm_boss.gd" id="1_chilt"]
+[ext_resource type="Texture2D" uid="uid://bjxnmq53pjk60" path="res://Sprites/attackCircle.png" id="2_odtc8"]
+[ext_resource type="Texture2D" uid="uid://bt3yfi1fjvogx" path="res://Sprites/big_worm.png" id="3_32y2l"]
+[ext_resource type="Script" uid="uid://dwycky2678vac" path="res://worm_spawner.gd" id="4_id74p"]
+[ext_resource type="PackedScene" uid="uid://2uye6bilwkwl" path="res://Scenes/eletroattack.tscn" id="5_igrme"]
+[ext_resource type="Script" uid="uid://d2ubobj8ibu2g" path="res://Scripts/progress_bar.gd" id="6_28x63"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0ui0"]
 radius = 25.0
@@ -14,27 +14,27 @@ radius = 25.0
 radius = 26.0192
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foidg"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(320, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0dpe"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(256, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0ui0"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_leav5"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7cgn"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(128, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j6ae8"]
-atlas = ExtResource("1_efwh1")
+atlas = ExtResource("3_32y2l")
 region = Rect2(192, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_foidg"]
@@ -244,10 +244,10 @@ bg_color = Color(0.705276, 0, 0.204951, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duyiy"]
 bg_color = Color(0.0666667, 0.454902, 0.843137, 1)
 
-[node name="WormBoss" type="CharacterBody2D"]
+[node name="SteffanoBoss" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_leav5")
+script = ExtResource("1_chilt")
 
 [node name="HitboxAtk" type="Area2D" parent="."]
 collision_layer = 0
@@ -257,7 +257,7 @@ shape = SubResource("CircleShape2D_u0ui0")
 
 [node name="Sprite2D" type="Sprite2D" parent="HitboxAtk"]
 visible = false
-texture = ExtResource("2_u0ui0")
+texture = ExtResource("2_odtc8")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0
@@ -279,11 +279,12 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_u0ui0")
 
-[node name="WormSpawner" type="Node2D" parent="."]
-script = ExtResource("4_q7cgn")
-mini_worm_node = ExtResource("5_j6ae8")
+[node name="EletroAttackSpawner" type="Node2D" parent="."]
+script = ExtResource("4_id74p")
+mini_worm_node = ExtResource("5_igrme")
 
-[node name="Timer" type="Timer" parent="WormSpawner"]
+[node name="Timer" type="Timer" parent="EletroAttackSpawner"]
+wait_time = 1.25
 autostart = true
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -306,11 +307,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_m0dpe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_duyiy")
 max_value = 550.0
 show_percentage = false
-script = ExtResource("6_foidg")
+script = ExtResource("6_28x63")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="HitboxAtk" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="WormSpawner/Timer" to="WormSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="EletroAttackSpawner/Timer" to="EletroAttackSpawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
