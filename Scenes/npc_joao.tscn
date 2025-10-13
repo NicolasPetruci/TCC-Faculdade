@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://w1x60nd1a2uu"]
 
 [ext_resource type="Script" uid="uid://bmwap4hlr2bdb" path="res://Scripts/npc_joao.gd" id="1_vf20u"]
-[ext_resource type="Texture2D" uid="uid://h3mr20jmb2is" path="res://Sprites/orange_note.png" id="2_pkab4"]
+[ext_resource type="Texture2D" uid="uid://ddnkyl8bhnddc" path="res://Sprites/npc_joao.png" id="2_pkab4"]
 [ext_resource type="FontFile" uid="uid://uestdml20eup" path="res://Minecraft.ttf" id="3_pkab4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7weuw"]
@@ -18,8 +18,8 @@ font_size = 7
 shadow_color = Color(0.137255, 0.137255, 0.137255, 0.470588)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pkab4"]
-radius = 6.0
-height = 26.0
+radius = 7.0
+height = 22.0
 
 [node name="NpcJoao" type="Area2D"]
 texture_filter = 1
@@ -69,7 +69,7 @@ autowrap_mode = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -1)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_pkab4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

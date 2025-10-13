@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dr4uhylk17ipg"]
 
 [ext_resource type="Script" uid="uid://7mmwqixh5i1b" path="res://Scripts/npc_luca.gd" id="1_dbxm2"]
-[ext_resource type="Texture2D" uid="uid://b7ypt6ada11wf" path="res://Sprites/yellow_note.png" id="2_38gtj"]
+[ext_resource type="Texture2D" uid="uid://db64iqfeojbl8" path="res://Sprites/npc_luca.png" id="2_38gtj"]
 [ext_resource type="FontFile" uid="uid://uestdml20eup" path="res://Minecraft.ttf" id="3_38gtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv8iv"]
@@ -18,8 +18,8 @@ font_size = 7
 shadow_color = Color(0.137255, 0.137255, 0.137255, 0.470588)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38gtj"]
-radius = 6.0
-height = 26.0
+radius = 8.0
+height = 22.0
 
 [node name="NpcLuca" type="Area2D"]
 script = ExtResource("1_dbxm2")
@@ -68,7 +68,7 @@ autowrap_mode = 2
 z_index = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -1)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_38gtj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
