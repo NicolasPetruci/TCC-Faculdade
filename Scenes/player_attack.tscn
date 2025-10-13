@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyex75crscpbl"]
+
+[ext_resource type="Script" uid="uid://dxcg0vpu382s7" path="res://Scripts/player_attack.gd" id="1_cjeny"]
+[ext_resource type="Texture2D" uid="uid://cf3kbrt6f45ab" path="res://Sprites/LaminaAtak.png" id="1_rc6xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjeny"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(0, 0, 70, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxpxe"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(70, 0, 70, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kvu2"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(140, 0, 70, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3ki3"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(210, 0, 70, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1rfp"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(70, 0, 70, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cl27"]
+atlas = ExtResource("1_rc6xn")
+region = Rect2(0, 0, 70, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8ajb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjeny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxpxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kvu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3ki3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kvu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1rfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cl27")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiotk"]
+radius = 14.0013
+height = 58.0013
+
+[node name="PlayerAttack" type="StaticBody2D"]
+script = ExtResource("1_cjeny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n8ajb")
+frame_progress = 0.793886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.57013
+shape = SubResource("CapsuleShape2D_wiotk")

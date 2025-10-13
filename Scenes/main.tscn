@@ -12,7 +12,7 @@ font_size = 10
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(235, 143)
+position = Vector2(151, 163)
 
 [node name="SpawnerManager" type="Node2D" parent="."]
 position = Vector2(0, 1)

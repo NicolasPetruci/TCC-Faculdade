@@ -1,29 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://p2yvfj534kyb"]
+[gd_scene load_steps=7 format=3 uid="uid://w1x60nd1a2uu"]
 
-[ext_resource type="Script" uid="uid://dwkema7nv00ng" path="res://Scripts/npc_tomas.gd" id="1_uupij"]
-[ext_resource type="Texture2D" uid="uid://becg4ay5o6y2d" path="res://Sprites/green_note.png" id="2_n1msq"]
+[ext_resource type="Script" uid="uid://bmwap4hlr2bdb" path="res://Scripts/npc_joao.gd" id="1_vf20u"]
+[ext_resource type="Texture2D" uid="uid://h3mr20jmb2is" path="res://Sprites/orange_note.png" id="2_pkab4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cdyd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7weuw"]
 size = Vector2(40, 40)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8dtf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpkoa"]
 bg_color = Color(0.0923971, 0.0923971, 0.0923971, 0.6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_uupij"]
+[sub_resource type="LabelSettings" id="LabelSettings_b4xc7"]
 font_size = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_2d4rk"]
+[sub_resource type="LabelSettings" id="LabelSettings_2scfj"]
 font_size = 7
 shadow_color = Color(0.137255, 0.137255, 0.137255, 0.470588)
 
-[node name="NPC_Tomas" type="Area2D"]
-script = ExtResource("1_uupij")
+[node name="NpcJoao" type="Area2D"]
+script = ExtResource("1_vf20u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_n1msq")
+texture = ExtResource("2_pkab4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4cdyd")
+shape = SubResource("RectangleShape2D_7weuw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,7 +33,7 @@ offset_top = 141.0
 offset_right = 255.0
 offset_bottom = 171.0
 theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_l8dtf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lpkoa")
 autowrap_mode = 2
 
 [node name="TextoDialogo" type="Label" parent="CanvasLayer"]
@@ -41,7 +41,7 @@ offset_left = 80.0
 offset_top = 145.0
 offset_right = 250.0
 offset_bottom = 168.0
-label_settings = SubResource("LabelSettings_uupij")
+label_settings = SubResource("LabelSettings_b4xc7")
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
@@ -52,7 +52,7 @@ offset_right = 12.0
 offset_bottom = -20.0
 theme_override_font_sizes/font_size = 10
 text = "teste"
-label_settings = SubResource("LabelSettings_2d4rk")
+label_settings = SubResource("LabelSettings_2scfj")
 vertical_alignment = 1
 autowrap_mode = 2
 
