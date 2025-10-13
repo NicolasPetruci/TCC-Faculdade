@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://did4t1vlwtmyy"]
+[gd_scene load_steps=8 format=3 uid="uid://did4t1vlwtmyy"]
 
 [ext_resource type="Script" uid="uid://dtj11op85fqc8" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b78gs51s40g4g" path="res://Scenes/level.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ci7vyqu2suon" path="res://Scripts/spawner_manager.gd" id="4_jjvhh"]
 [ext_resource type="FontFile" uid="uid://uestdml20eup" path="res://Minecraft.ttf" id="5_kry3j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.87451)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.101961, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 10
@@ -13,7 +21,7 @@ font_size = 10
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(161, 160)
+position = Vector2(179, 158)
 
 [node name="SpawnerManager" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -27,12 +35,23 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LabelTimer" type="Label" parent="CanvasLayer"]
-offset_left = 125.0
-offset_top = 4.0
-offset_right = 211.0
-offset_bottom = 27.0
+[node name="CaixaDeDialogo" type="Label" parent="CanvasLayer"]
+offset_left = 134.0
+offset_top = 1.0
+offset_right = 224.0
+offset_bottom = 15.0
 theme_override_fonts/font = ExtResource("5_kry3j")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_kry3j")
+autowrap_mode = 2
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer"]
+offset_left = 136.0
+offset_top = 4.0
+offset_right = 223.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("5_kry3j")
+theme_override_font_sizes/font_size = 1
 text = "Temporizador: 30"
 label_settings = SubResource("LabelSettings_jjvhh")
 

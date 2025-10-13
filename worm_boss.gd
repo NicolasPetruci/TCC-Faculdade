@@ -16,9 +16,9 @@ func _on_player_body_entered(body: Node2D) -> void:
 	animation_player.play("attack")
 
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	body.take_damage(5)
-	
+func _on_hitbox_body_entered(body) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(5)
 
 #------------------------------------------------
 

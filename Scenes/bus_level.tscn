@@ -1,5 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bubvyu5dabmuw"]
+[gd_scene load_steps=14 format=3 uid="uid://bubvyu5dabmuw"]
 
+[ext_resource type="Script" uid="uid://dcw3yuc7uy3e3" path="res://Scripts/parallax_2d.gd" id="1_0ejl3"]
+[ext_resource type="Texture2D" uid="uid://cnbrn2p5rsawn" path="res://Sprites/Rua.png" id="1_1evo8"]
+[ext_resource type="Script" uid="uid://bewsrbrit6ruv" path="res://Scripts/bus_level.gd" id="1_gp10h"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="1_yomgn"]
 [ext_resource type="Texture2D" uid="uid://cmkk3175l6t6e" path="res://Sprites/bus_complete.png" id="2_1evo8"]
 [ext_resource type="PackedScene" uid="uid://p2yvfj534kyb" path="res://Scenes/npc_tomas.tscn" id="3_5qi0g"]
@@ -19,10 +22,23 @@ a = Vector2(-3, -100)
 b = Vector2(-3, 476)
 
 [node name="busScene" type="Node2D"]
+script = ExtResource("1_gp10h")
 
-[node name="BusMiddle" type="Sprite2D" parent="."]
-position = Vector2(160, -72)
-scale = Vector2(1, 1.01563)
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+script = ExtResource("1_0ejl3")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="BusMiddle2" type="Sprite2D" parent="Parallax2D/ParallaxLayer2"]
+position = Vector2(157, -69)
+scale = Vector2(1.44375, 2.125)
+texture = ExtResource("1_1evo8")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="BusMiddle" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+position = Vector2(158.5, -72)
+scale = Vector2(1.44063, 1.01563)
 texture = ExtResource("2_1evo8")
 
 [node name="Chairs" type="Node2D" parent="."]
@@ -230,9 +246,6 @@ position = Vector2(75, -195)
 
 [node name="Chairs5" type="Node2D" parent="."]
 
-[node name="Chair" parent="Chairs5" instance=ExtResource("7_lu7x5")]
-position = Vector2(86, -295)
-
 [node name="Chair2" parent="Chairs5" instance=ExtResource("7_lu7x5")]
 position = Vector2(206, 157)
 
@@ -252,9 +265,10 @@ position = Vector2(134, 157)
 position = Vector2(116, 157)
 
 [node name="Player" parent="." instance=ExtResource("1_yomgn")]
-position = Vector2(123, 117)
+position = Vector2(158, 118)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 1)
 limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -262,14 +276,15 @@ editor_draw_screen = false
 script = ExtResource("6_mt2uc")
 
 [node name="BusBack" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
+position = Vector2(-157, -100)
+scale = Vector2(2, 2)
 physics_material_override = SubResource("PhysicsMaterial_yomgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
 shape = SubResource("SegmentShape2D_6uck0")
 
 [node name="BusBack2" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
+position = Vector2(1, 95)
 physics_material_override = SubResource("PhysicsMaterial_yomgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
@@ -277,13 +292,18 @@ position = Vector2(2, -506)
 shape = SubResource("SegmentShape2D_6uck0")
 
 [node name="BusWall" type="StaticBody2D" parent="."]
+position = Vector2(-126, 0)
+rotation = 0.172788
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
 position = Vector2(65, -293)
 shape = SubResource("SegmentShape2D_5qi0g")
 
 [node name="BusWall2" type="StaticBody2D" parent="."]
-position = Vector2(-62, 3)
+position = Vector2(-329, 21)
+rotation = -0.172788
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
 position = Vector2(322, -294)
@@ -296,4 +316,4 @@ position = Vector2(120, 21)
 position = Vector2(196, -66)
 
 [node name="NpcLuca" parent="." instance=ExtResource("4_mkfkd")]
-position = Vector2(160, -297)
+position = Vector2(160, -273)

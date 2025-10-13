@@ -1,28 +1,76 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw3u6rldtwt1y"]
+[gd_scene load_steps=11 format=3 uid="uid://dw3u6rldtwt1y"]
 
 [ext_resource type="Texture2D" uid="uid://cmkk3175l6t6e" path="res://Sprites/bus_complete.png" id="1_nisv6"]
+[ext_resource type="Script" uid="uid://dcw3yuc7uy3e3" path="res://Scripts/parallax_2d.gd" id="1_uyc1d"]
+[ext_resource type="Texture2D" uid="uid://cnbrn2p5rsawn" path="res://Sprites/Rua.png" id="1_xmu81"]
 [ext_resource type="PackedScene" uid="uid://b4m6cjrwcy3cc" path="res://Scenes/worm_boss.tscn" id="2_ax60m"]
 [ext_resource type="PackedScene" uid="uid://dgqabwwfs5l0g" path="res://Scenes/chair.tscn" id="2_mewru"]
 [ext_resource type="PackedScene" uid="uid://bppgygf7w0rcv" path="res://Scenes/player.tscn" id="3_ycwjk"]
 [ext_resource type="Script" uid="uid://dupm4uy8q442a" path="res://Scripts/camera_2d.gd" id="4_nisv6"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mewru"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oh5xg"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xmu81"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_41siu"]
 a = Vector2(319, 142)
 b = Vector2(0, 142)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_uyc1d"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ye0n3"]
 a = Vector2(-3, -100)
 b = Vector2(-3, 476)
 
 [node name="BossFight" type="Node2D"]
 position = Vector2(-3, 38)
 
-[node name="BusMiddle" type="Sprite2D" parent="."]
-position = Vector2(160, -72)
-scale = Vector2(1, 1.01563)
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+script = ExtResource("1_uyc1d")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="BusMiddle2" type="Sprite2D" parent="Parallax2D/ParallaxLayer2"]
+position = Vector2(157, -69)
+scale = Vector2(1.44375, 2.125)
+texture = ExtResource("1_xmu81")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="BusMiddle" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+position = Vector2(158.5, -72)
+scale = Vector2(1.44063, 1.01563)
 texture = ExtResource("1_nisv6")
+
+[node name="BusBack" type="StaticBody2D" parent="."]
+position = Vector2(-157, -100)
+scale = Vector2(2, 2)
+physics_material_override = SubResource("PhysicsMaterial_oh5xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
+shape = SubResource("SegmentShape2D_41siu")
+
+[node name="BusBack2" type="StaticBody2D" parent="."]
+position = Vector2(1, 95)
+physics_material_override = SubResource("PhysicsMaterial_oh5xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
+position = Vector2(2, -506)
+shape = SubResource("SegmentShape2D_41siu")
+
+[node name="BusWall" type="StaticBody2D" parent="."]
+position = Vector2(-126, 0)
+rotation = 0.172788
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
+position = Vector2(65, -293)
+shape = SubResource("SegmentShape2D_ye0n3")
+
+[node name="BusWall2" type="StaticBody2D" parent="."]
+position = Vector2(-329, 21)
+rotation = -0.172788
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
+position = Vector2(322, -294)
+shape = SubResource("SegmentShape2D_ye0n3")
 
 [node name="Chairs" type="Node2D" parent="."]
 
@@ -36,7 +84,7 @@ position = Vector2(171, -85)
 position = Vector2(185, 66)
 
 [node name="Chair6" parent="Chairs" instance=ExtResource("2_mewru")]
-position = Vector2(72, 155)
+position = Vector2(44, 80)
 
 [node name="Chair7" parent="Chairs" instance=ExtResource("2_mewru")]
 position = Vector2(128, 21)
@@ -63,7 +111,7 @@ position = Vector2(180, -141)
 position = Vector2(20, 0)
 
 [node name="Chair" parent="Chairs2" instance=ExtResource("2_mewru")]
-position = Vector2(74, 157)
+position = Vector2(11, 27)
 
 [node name="Chair2" parent="Chairs2" instance=ExtResource("2_mewru")]
 position = Vector2(71, 55)
@@ -95,9 +143,6 @@ position = Vector2(62, -190)
 [node name="Chairs4" type="Node2D" parent="."]
 position = Vector2(150, 0)
 
-[node name="Chair" parent="Chairs4" instance=ExtResource("2_mewru")]
-position = Vector2(74, 157)
-
 [node name="Chair2" parent="Chairs4" instance=ExtResource("2_mewru")]
 position = Vector2(31, 103)
 
@@ -105,16 +150,16 @@ position = Vector2(31, 103)
 position = Vector2(75, 110)
 
 [node name="Chair4" parent="Chairs4" instance=ExtResource("2_mewru")]
-position = Vector2(75, 87)
+position = Vector2(140, 1)
 
 [node name="Chair5" parent="Chairs4" instance=ExtResource("2_mewru")]
-position = Vector2(75, 63)
+position = Vector2(104, 88)
 
 [node name="Chair6" parent="Chairs4" instance=ExtResource("2_mewru")]
 position = Vector2(18, 21)
 
 [node name="Chair7" parent="Chairs4" instance=ExtResource("2_mewru")]
-position = Vector2(75, 16)
+position = Vector2(75, 40)
 
 [node name="Chair8" parent="Chairs4" instance=ExtResource("2_mewru")]
 position = Vector2(75, -9)
@@ -145,60 +190,20 @@ position = Vector2(42, -23)
 
 [node name="Chairs5" type="Node2D" parent="."]
 
-[node name="Chair" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(86, -295)
-
-[node name="Chair2" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(206, 157)
-
-[node name="Chair3" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(188, 157)
-
-[node name="Chair4" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(170, 157)
-
 [node name="Chair5" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(152, 157)
+position = Vector2(276, 53)
 
 [node name="Chair6" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(134, 157)
+position = Vector2(30, 122)
 
 [node name="Chair7" parent="Chairs5" instance=ExtResource("2_mewru")]
-position = Vector2(116, 157)
-
-[node name="BusBack" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
-physics_material_override = SubResource("PhysicsMaterial_mewru")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack"]
-shape = SubResource("SegmentShape2D_xmu81")
-
-[node name="BusBack2" type="StaticBody2D" parent="."]
-position = Vector2(1, 38)
-physics_material_override = SubResource("PhysicsMaterial_mewru")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack2"]
-position = Vector2(2, -506)
-shape = SubResource("SegmentShape2D_xmu81")
-
-[node name="BusWall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall"]
-position = Vector2(65, -293)
-shape = SubResource("SegmentShape2D_uyc1d")
-
-[node name="BusWall2" type="StaticBody2D" parent="."]
-position = Vector2(-62, 3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BusWall2"]
-position = Vector2(322, -294)
-shape = SubResource("SegmentShape2D_uyc1d")
+position = Vector2(297, 94)
 
 [node name="Boss" parent="." instance=ExtResource("2_ax60m")]
 position = Vector2(157, -273)
 
 [node name="Player" parent="." instance=ExtResource("3_ycwjk")]
-position = Vector2(152, 133)
+position = Vector2(146, 60)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_smoothed = true
